@@ -1,0 +1,72 @@
+version: 2
+
+models:
+  - name: events
+    description: "Staging table for events data."
+    columns:
+      - name: EVENT_UNIQUE_ID
+        description: "Primary key for users."
+        tests:
+          - unique
+          - not_null
+      - name: OCC_DATE
+        description: "Date Collision Occurred"
+      - name: OCC_MONTH
+        description: "Month Collision Occurred"
+      - name: OCC_DOW
+        description: "Day of Week Collision Occurred"
+
+
+  - name: location
+    description: " Staging table for location"
+    columns:
+      - name: HOOD_158
+        description: "Identifier of Neighbourhood"
+      - name: NEIGHBOURHOOD_158
+        description: "Name of Neighbourhood where Collision Occurred"
+      - name: LONG_WGS84
+        description: "Longitude Coordinate"
+      - name: LAT_WGS84
+        description: "Latitude Coordinate"
+
+
+  - name: collision_outcomes
+    description: "Staging table for collision deatils"
+    columns:
+      - name: EVENT_UNIQUE_ID
+        description: "Foreign Key referencing Events"
+      - name: FATALITIES
+        description: "Number of Person’s Killed associated with the Collision"
+      - name: INJURY_COLLISIONS"
+        description: "Indicates whether a Collision had an associated Injury"
+      - name: FTR_COLLISIONS
+        description: "Indicates whether a Collision was associated to Fail to Remain"
+      - name: PD_COLLISIONS
+        description: "Indicates Whether a Collision was associated to Property Damage"
+
+  - name: collision_details
+    description: ""
+    columns:
+      - name: EVENT_UNIQUE_ID
+        description: "Foreign Key referencing Events"
+      - name: AUTOMOBILE
+        description: "Indicates whether a Collision involved a person in an automobile"
+      - name: MOTORCYCLE
+        description: "Indicates whether a Collision involved a person in a motorcycle "
+      - name: PASSENGER
+        description: "Indicates whether a Collision involved a passenger in a motor vehicle"
+      - name: BICYCLE
+        description: "Indicates whether a Collision involved a cyclist"
+      - name:  PEDESTRIAN
+        description: "Indicates whether a Collision involved a pedestrian"
+
+
+
+
+
+
+
+
+
+
+
