@@ -5,7 +5,7 @@ from airflow.providers.google.cloud.operators.dataproc import (
     DataprocDeleteClusterOperator,
     DataprocSubmitJobOperator,
 )
-from datetime import datetime, timedeltaßßß
+from datetime import datetime, timedelta
 
 PROJECT_ID = "ttc-gcp"
 REGION = "us-central1"
